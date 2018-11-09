@@ -12,7 +12,8 @@
     "clean": "rm -rf build && mkdir build",
     "build-server": "./node_modules/.bin/babel src -d build",
     "build": "npm run clean && npm run build-server",
-    "test": "mocha --timeout 10000"
+    "mocha": "./node_modules/.bin/mocha --timeout 10000",
+    "test": "npm run build && npm run mocha"
   },
   "repository": {
     "type": "git",
@@ -38,5 +39,9 @@
     "joi": "^14.0.4",
     "mysql": "^2.16.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
 }
